@@ -1,11 +1,4 @@
-export interface Product {
-    id: number;
-    title: string;
-    price: number;
-    category: string;
-    image: string;
-    description: string;
-}
+import type {Product} from "@/types/reducers.ts";
 
 export const mockProducts: Product[] = [
     {
@@ -98,15 +91,5 @@ export const fetchProducts = (): Promise<Product[]> => {
             resolve(mockProducts);
 
         }, 500);
-    });
-};
-
-// По ID
-export const fetchProductById = (id: number): Promise<Product | undefined> => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            const product = mockProducts.find(p => p.id === id);
-            resolve(product);
-        }, 300);
     });
 };

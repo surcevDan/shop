@@ -11,16 +11,13 @@ import {
     Image,
     Text, DialogPositioner, IconButton,
 } from "@chakra-ui/react";
-import type {Product} from "@/API/mockData.ts";
+
 import * as React from "react";
 import {GrClose} from "react-icons/gr";
+import type {CardProps} from "@/types/reducers.ts";
 
 
-interface CardProps {
-    product: Product | null;
-    isOpen: boolean,
-    onClose: () => void
-}
+
 
 const ModalScreenProduct:React.FC<CardProps> = ({product, isOpen, onClose })=>{
 
@@ -35,7 +32,6 @@ const ModalScreenProduct:React.FC<CardProps> = ({product, isOpen, onClose })=>{
                             <DialogTitle>{product?.title}</DialogTitle>
                             <IconButton aria-label="Закрыть" onClick={onClose}><GrClose/></IconButton>
                     </DialogHeader>
-
                     <DialogBody>
                         <Image src={product?.image} mx="auto" aspectRatio={4 / 3} />
                         <Text textStyle={["sm", "lg", "lg"]} >{product?.description}</Text>
@@ -46,7 +42,6 @@ const ModalScreenProduct:React.FC<CardProps> = ({product, isOpen, onClose })=>{
                     </DialogFooter>
                 </DialogContent>
             </DialogPositioner>
-
         </DialogRoot>
 
     )

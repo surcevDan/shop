@@ -1,10 +1,8 @@
 import {Box, Image, Text} from "@chakra-ui/react";
 import type {FC} from "react";
-import type {Product} from "@/API/mockData.ts";
+import type {CardProps} from "@/types/reducers.ts";
 
-interface CardProps {
-    products: Product;
-}
+
 
 const Card: FC<CardProps> = ({products}) =>{
     return (
